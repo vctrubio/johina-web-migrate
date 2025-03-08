@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { HiLocationMarker, HiTag, HiCalendar, HiHeart, HiShare, HiSearch } from "react-icons/hi";
+import Link from "next/link";
 
 // Sample mural data
 const murals = [
@@ -73,7 +74,7 @@ const MuralCard = ({ mural }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image container with overlay on hover */}
-      <div className="relative h-56 overflow-hidden">
+      <Link href={`/murales/${mural.id}`} className="block relative h-56 overflow-hidden">
         <div 
           className="h-full w-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center"
           style={{
@@ -100,11 +101,15 @@ const MuralCard = ({ mural }) => {
           </div>
           <p className="text-sm mt-1">{mural.description}</p>
         </div>
-      </div>
+      </Link>
       
       {/* Card content */}
       <div className="p-5">
-        <h3 className="font-bold text-xl mb-2 text-gray-900 dark:text-white">{mural.title}</h3>
+        <Link href={`/murales/${mural.id}`}>
+          <h3 className="font-bold text-xl mb-2 text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+            {mural.title}
+          </h3>
+        </Link>
         
         <div className="flex items-center text-gray-600 dark:text-gray-300 mb-3">
           <HiLocationMarker className="mr-1 text-red-500" />
@@ -136,10 +141,12 @@ const MuralCard = ({ mural }) => {
             <span>{isLiked ? 'Liked' : 'Like'}</span>
           </button>
           
-          <button className="flex items-center gap-1 px-3 py-1 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors">
-            <HiShare className="stroke-current" />
-            <span>Share</span>
-          </button>
+          <Link 
+            href={`/murales/${mural.id}`}
+            className="flex items-center gap-1 px-3 py-1 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors"
+          >
+            View Details
+          </Link>
         </div>
       </div>
     </div>
