@@ -32,47 +32,47 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <nav className="w-full p-4 bg-gray-100 dark:bg-gray-900 shadow-md">
+          <nav className="w-full p-4 bg-neutral-50 dark:bg-gray-900 shadow-sm">
             <div className="container mx-auto flex flex-col items-center">
               {/* Top row with logo and theme toggle */}
-              <div className="w-full flex justify-end mb-2">
+              {/* <div className="w-full flex justify-end mb-2">
                 <ThemeToggle />
-              </div>
+              </div> */}
               
               {/* Photo placeholder */}
-              <div className="w-32 h-32 bg-gray-300 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
+              <div className="w-32 h-32 bg-white dark:bg-gray-700 rounded-full mb-4 overflow-hidden shadow-md">
                 {/* Replace with actual logo when available */}
-                <div className="w-full h-full flex items-center justify-center text-gray-600 dark:text-gray-400">
+                <div className="w-full h-full flex items-center justify-center text-gray-500 dark:text-gray-400">
                   Logo
                 </div>
               </div>
               
               {/* Navigation links */}
-              <ul className="flex space-x-6 mt-2">
+              <ul className="flex space-x-8 mt-2">
                 <li>
-                  <Link href="/" className="hover:text-blue-500 transition-colors">
+                  <Link href="/" className="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors font-medium">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/murales" className="hover:text-blue-500 transition-colors">
+                  <Link href="/murales" className="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors font-medium">
                     Murales
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="hover:text-blue-500 transition-colors">
+                  <Link href="/about" className="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors font-medium">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-blue-500 transition-colors">
+                  <Link href="/contact" className="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors font-medium">
                     Contact
                   </Link>
                 </li>
               </ul>
             </div>
           </nav>
-          <div className="container mx-auto py-8">
+          <div className="container mx-auto py-8 px-4 sm:px-6">
             {children}
           </div>
         </ThemeProvider>

@@ -20,9 +20,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-8">
-      {/* Banner placeholder with artistic gradient */}
-      <div className="w-full h-48 sm:h-64 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 rounded-lg flex items-center justify-center text-white shadow-lg overflow-hidden relative">
-        <div className="absolute inset-0 bg-[url('/texture-overlay.png')] opacity-20"></div>
+      {/* Banner placeholder with softer gradient */}
+      <div className="w-full h-48 sm:h-64 bg-gradient-to-r from-indigo-400 via-violet-300 to-pink-300 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-400 rounded-lg flex items-center justify-center text-white shadow-md overflow-hidden relative">
+        <div className="absolute inset-0 bg-[url('/texture-overlay.png')] opacity-10"></div>
         <div className="z-10 text-center p-6">
           <h1 className="text-3xl sm:text-4xl font-bold mb-2">Johina</h1>
           <p className="text-lg sm:text-xl">Transforming Spaces Through Art Since 1987</p>
@@ -32,8 +32,8 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Photo component with hover effect */}
         <div 
-          className={`bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 ${
-            photoHovered ? "scale-105 shadow-2xl" : ""
+          className={`bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-all duration-300 ${
+            photoHovered ? "scale-105 shadow-lg" : ""
           }`}
           onMouseEnter={() => setPhotoHovered(true)}
           onMouseLeave={() => setPhotoHovered(false)}
@@ -50,13 +50,13 @@ export default function Home() {
             )}
           </div>
           <div className="p-6">
-            <h3 className="font-bold text-xl mb-2">Artistic Journey</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <h3 className="font-bold text-xl mb-2 text-gray-700 dark:text-white">Artistic Journey</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               From historic restorations to contemporary murals, explore the artistry that spans continents.
             </p>
             <Link 
               href="/murales" 
-              className="inline-block px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors"
+              className="inline-block px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg transition-colors"
             >
               View Gallery
             </Link>
@@ -65,20 +65,20 @@ export default function Home() {
 
         {/* Description component with enhanced hover effect */}
         <div 
-          className={`bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 ${
-            descriptionHovered ? "border-2 border-indigo-500 shadow-xl" : "border border-transparent"
+          className={`bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md transition-all duration-300 ${
+            descriptionHovered ? "border-2 border-indigo-300 dark:border-indigo-500 shadow-lg" : "border border-transparent"
           }`}
           onMouseEnter={() => setDescriptionHovered(true)}
           onMouseLeave={() => setDescriptionHovered(false)}
         >
-          <h2 className="text-2xl font-bold mb-4 flex items-center">
+          <h2 className="text-2xl font-bold mb-4 flex items-center text-gray-700 dark:text-white">
             <span className="mr-2">About Johina</span>
-            <div className="h-1 flex-grow bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+            <div className="h-1 flex-grow bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500 rounded-full"></div>
           </h2>
           
-          <p className="mb-4 text-gray-800 dark:text-gray-200 leading-relaxed">
+          <p className="mb-4 text-gray-600 dark:text-gray-200 leading-relaxed">
             Johina, a muralist since <span className="font-bold text-indigo-600 dark:text-indigo-400">1987</span>, has painted for luxury hotels, royal palaces, embassies, and private estates across 
-            <span className="font-bold text-purple-600 dark:text-purple-400"> England, France, and Spain</span>.
+            <span className="font-bold text-violet-500 dark:text-purple-400"> England, France, and Spain</span>.
           </p>
           
           <p className="mb-4 text-gray-800 dark:text-gray-200 leading-relaxed">
@@ -134,14 +134,14 @@ export default function Home() {
       </div>
       
       {/* Featured projects section */}
-      <div className="mt-8 bg-gray-50 dark:bg-gray-900 rounded-xl p-6 shadow-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Featured Projects</h2>
+      <div className="mt-8 bg-neutral-50 dark:bg-gray-900 rounded-xl p-6 shadow-md">
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-700 dark:text-white">Featured Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[1, 2, 3].map(index => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-40 bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600"></div>
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow transition-shadow">
+              <div className="h-40 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600"></div>
               <div className="p-4">
-                <h3 className="font-medium">Project {index}</h3>
+                <h3 className="font-medium text-gray-700 dark:text-white">Project {index}</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Location • Year</p>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function Home() {
         <div className="text-center mt-6">
           <Link 
             href="/murales" 
-            className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-lg hover:from-purple-600 hover:to-indigo-600 transition-all shadow-md hover:shadow-lg"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-violet-400 to-indigo-400 dark:from-purple-500 dark:to-indigo-500 text-white rounded-lg hover:from-violet-500 hover:to-indigo-500 dark:hover:from-purple-600 dark:hover:to-indigo-600 transition-all shadow-sm hover:shadow"
           >
             Explore All Projects
           </Link>

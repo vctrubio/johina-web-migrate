@@ -20,7 +20,7 @@ export default function Contact() {
     <div className="flex flex-col gap-8">
       {/* Header section */}
       <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold mb-2">Contact</h1>
+        <h1 className="text-3xl font-bold mb-2 text-gray-700 dark:text-white">Contact</h1>
         <p className="text-gray-600 dark:text-gray-300">
           Get in touch with Johina for commissions, restoration projects, or consultations.
         </p>
@@ -34,7 +34,7 @@ export default function Contact() {
             className="md:max-w-md mx-auto" 
           />
           
-          <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg text-sm text-gray-600 dark:text-gray-300">
+          <div className="mt-6 p-4 bg-neutral-50 dark:bg-gray-800 rounded-lg text-sm text-gray-600 dark:text-gray-300">
             <p className="mb-2">
               <span className="font-semibold">Note:</span> You can share this contact information using the share button on the card.
             </p>
@@ -44,17 +44,17 @@ export default function Contact() {
         
         {/* Contact form or additional information */}
         <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-          <h2 className="text-xl font-bold mb-4">Send a Message</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-700 dark:text-white">Send a Message</h2>
           
           <form className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
                 Your Name
               </label>
               <input
                 type="text"
                 id="name"
-                className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                className="w-full p-2 border border-gray-200 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-white focus:ring-indigo-300 focus:border-indigo-300"
                 placeholder="Enter your name"
               />
             </div>
@@ -97,7 +97,7 @@ export default function Contact() {
             
             <button
               type="submit"
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+              className="w-full bg-indigo-400 hover:bg-indigo-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
             >
               Send Message
             </button>
@@ -107,9 +107,9 @@ export default function Contact() {
       
       {/* Map or additional contact channels */}
       <div className="mt-8 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-        <h2 className="text-xl font-bold mb-4">Visit Studio</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-700 dark:text-white">Visit Studio</h2>
         
-        <div className="aspect-video w-full bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+        <div className="aspect-video w-full bg-neutral-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
           {/* Placeholder for a map */}
           <p className="text-gray-500 dark:text-gray-400">Interactive Map Placeholder</p>
         </div>

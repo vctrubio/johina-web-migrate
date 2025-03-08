@@ -69,7 +69,7 @@ const MuralCard = ({ mural }) => {
 
   return (
     <div 
-      className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl"
+      className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -106,13 +106,13 @@ const MuralCard = ({ mural }) => {
       {/* Card content */}
       <div className="p-5">
         <Link href={`/murales/${mural.id}`}>
-          <h3 className="font-bold text-xl mb-2 text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+          <h3 className="font-bold text-xl mb-2 text-gray-700 dark:text-white hover:text-indigo-600 dark:hover:text-blue-400 transition-colors">
             {mural.title}
           </h3>
         </Link>
         
         <div className="flex items-center text-gray-600 dark:text-gray-300 mb-3">
-          <HiLocationMarker className="mr-1 text-red-500" />
+          <HiLocationMarker className="mr-1 text-rose-400 dark:text-red-500" />
           <span className="text-sm">{mural.location}</span>
         </div>
         
@@ -121,19 +121,19 @@ const MuralCard = ({ mural }) => {
           {mural.tags.map((tag, index) => (
             <span 
               key={index} 
-              className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full flex items-center"
+              className="px-2 py-1 bg-neutral-100 dark:bg-gray-700 text-xs rounded-full flex items-center text-gray-600 dark:text-gray-300"
             >
-              <HiTag className="mr-1 text-blue-500" />
+              <HiTag className="mr-1 text-indigo-400 dark:text-blue-500" />
               {tag}
             </span>
           ))}
         </div>
         
         {/* Action buttons */}
-        <div className="flex justify-between pt-2 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex justify-between pt-2 border-t border-gray-100 dark:border-gray-700">
           <button 
             className={`flex items-center gap-1 px-3 py-1 rounded-full transition-colors ${
-              isLiked ? 'text-red-500' : 'text-gray-500 dark:text-gray-400'
+              isLiked ? 'text-rose-500' : 'text-gray-500 dark:text-gray-400'
             }`}
             onClick={() => setIsLiked(!isLiked)}
           >
@@ -143,7 +143,7 @@ const MuralCard = ({ mural }) => {
           
           <Link 
             href={`/murales/${mural.id}`}
-            className="flex items-center gap-1 px-3 py-1 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors"
+            className="flex items-center gap-1 px-3 py-1 rounded-full text-gray-500 dark:text-gray-400 hover:text-indigo-500 transition-colors"
           >
             View Details
           </Link>
@@ -200,14 +200,14 @@ export default function Murales() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Murales</h1>
+        <h1 className="text-3xl font-bold text-gray-700 dark:text-white">Murales</h1>
         
         <div className="flex gap-2">
           <button 
             className={`px-3 py-1 text-sm rounded-full transition-colors ${
               activeFilter === "all" 
-                ? "bg-blue-500 text-white" 
-                : "bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600"
+                ? "bg-indigo-500 text-white" 
+                : "bg-neutral-100 dark:bg-gray-700 hover:bg-neutral-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300"
             }`}
             onClick={() => setActiveFilter("all")}
           >
@@ -247,14 +247,14 @@ export default function Murales() {
         </div>
         <input
           type="search"
-          className="block w-full p-4 pl-10 text-sm border rounded-lg bg-gray-50 border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+          className="block w-full p-4 pl-10 text-sm border rounded-lg bg-white border-gray-200 focus:ring-indigo-300 focus:border-indigo-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white text-gray-700"
           placeholder="Search murals by title, location, or tags..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         {searchQuery && (
           <button
-            className="absolute right-2.5 bottom-2.5 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition-colors"
+            className="absolute right-2.5 bottom-2.5 bg-indigo-400 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-500 transition-colors"
             onClick={() => setSearchQuery("")}
           >
             Clear

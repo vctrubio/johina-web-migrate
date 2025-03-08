@@ -89,9 +89,9 @@ Location: ${location}
   };
 
   return (
-    <div className={`bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden relative ${className}`}>
+    <div className={`bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden relative ${className}`}>
       {/* Card Header with Avatar and Name */}
-      <div className="relative h-32 bg-gradient-to-r from-indigo-500 to-purple-600">
+      <div className="relative h-32 bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-600">
         <div className="absolute -bottom-12 left-6 h-24 w-24 rounded-full border-4 border-white dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-700">
           {avatarUrl ? (
             <Image 
@@ -110,16 +110,16 @@ Location: ${location}
       
       {/* Card Body */}
       <div className="pt-14 p-6">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white">{name}</h2>
-        <p className="text-indigo-600 dark:text-indigo-400 text-sm font-medium mb-4">{title}</p>
+        <h2 className="text-xl font-bold text-gray-700 dark:text-white">{name}</h2>
+        <p className="text-indigo-500 dark:text-indigo-400 text-sm font-medium mb-4">{title}</p>
         
         {/* Contact Information */}
         <div className="space-y-3 mb-6">
           <a 
             href={`mailto:${email}`} 
-            className="flex items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+            className="flex items-center text-gray-600 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400"
           >
-            <HiMail className="mr-2 text-indigo-500" />
+            <HiMail className="mr-2 text-indigo-400 dark:text-indigo-500" />
             <span className="text-sm">{email}</span>
           </a>
           
@@ -154,7 +154,7 @@ Location: ${location}
               {tags.map((tag, index) => (
                 <span 
                   key={index} 
-                  className="inline-flex items-center px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full"
+                  className="inline-flex items-center px-2 py-1 bg-neutral-100 dark:bg-gray-700 text-xs rounded-full text-gray-600 dark:text-gray-300"
                 >
                   <HiBriefcase className="mr-1 text-gray-500 dark:text-gray-400" />
                   {tag}
@@ -168,7 +168,7 @@ Location: ${location}
         <div className="flex mt-4 justify-end">
           <button 
             onClick={() => setShowShareOptions(!showShareOptions)} 
-            className="flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300"
+            className="flex items-center text-indigo-500 dark:text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300"
           >
             <HiShare className="mr-1" />
             <span>Share</span>

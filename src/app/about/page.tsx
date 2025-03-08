@@ -43,9 +43,9 @@ export default function About() {
 
   return (
     <div className="flex flex-col gap-8">
-      {/* Hero section with animated gradient background */}
-      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-64 md:h-80">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+      {/* Hero section with softer gradient background */}
+      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500 h-64 md:h-80">
+        <div className="absolute inset-0 bg-black opacity-20 dark:opacity-30"></div>
         <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">About Johina</h1>
           
@@ -75,8 +75,8 @@ export default function About() {
           onMouseEnter={() => setActiveSection('profile')}
           onMouseLeave={() => setActiveSection(null)}
         >
-          <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl">
-            <div className="relative h-80 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">
+          <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow">
+            <div className="relative h-80 bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-gray-700 dark:to-gray-800">
               {/* Replace with actual photo when available */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-gray-500 dark:text-gray-400 text-lg">
@@ -99,9 +99,9 @@ export default function About() {
             
             <div className="p-6 space-y-4">
               <div className="flex items-center gap-3">
-                <HiOutlineAcademicCap className="text-indigo-500 text-xl" />
+                <HiOutlineAcademicCap className="text-indigo-400 dark:text-indigo-500 text-xl" />
                 <div>
-                  <h3 className="font-semibold">Master's Degree</h3>
+                  <h3 className="font-semibold text-gray-700 dark:text-white">Master's Degree</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Christie's, London (Art History)</p>
                 </div>
               </div>
@@ -125,10 +125,10 @@ export default function About() {
           </div>
           
           {/* Contact card */}
-          <div className="mt-6 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-4 flex items-center">
+          <div className="mt-6 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+            <h3 className="text-xl font-bold mb-4 flex items-center text-gray-700 dark:text-white">
               <span>Contact</span>
-              <div className="h-1 flex-grow bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full ml-4"></div>
+              <div className="h-1 flex-grow bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500 rounded-full ml-4"></div>
             </h3>
             
             <div className="space-y-4">
@@ -156,15 +156,15 @@ export default function About() {
         {/* Biography sections */}
         <div className="md:col-span-2 space-y-8">
           {/* Expandable biography sections */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
             {/* Section tabs */}
-            <div className="flex border-b border-gray-200 dark:border-gray-700">
+            <div className="flex border-b border-gray-100 dark:border-gray-700">
               <button 
                 onClick={() => toggleSection('career')}
                 className={`flex-1 py-4 px-6 text-center font-medium transition-colors ${
                   expandedSection === 'career' 
-                    ? 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-300' 
-                    : 'hover:bg-gray-50 dark:hover:bg-gray-700'
+                    ? 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-300' 
+                    : 'hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
                 }`}
               >
                 Career
@@ -291,12 +291,12 @@ export default function About() {
           
           {/* Prestigious clients section */}
           <div 
-            className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-1"
+            className="bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-600 rounded-xl p-1"
             onMouseEnter={() => setActiveSection('clients')}
             onMouseLeave={() => setActiveSection(null)}
           >
             <div className="bg-white dark:bg-gray-800 rounded-lg p-6 h-full">
-              <h3 className="text-xl font-bold mb-4">Prestigious Clients</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-700 dark:text-white">Prestigious Clients</h3>
               
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                 {[
