@@ -11,7 +11,6 @@ import {
 } from "react-icons/hi";
 import { 
   HiPaintBrush,  // Using HiPaintBrush instead of HiOutlinePaintBrush
-  HiBuilding    // Using HiBuilding instead of HiOutlineBuildingStorefront
 } from "react-icons/hi2"; // Note the hi2 for newer icons
 
 import Image from "next/image";
